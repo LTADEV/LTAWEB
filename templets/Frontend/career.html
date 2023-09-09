@@ -1,0 +1,111 @@
+{% extends "Frontend/base.html" %} 
+
+{% comment %} {% include "Frontend/include/header.html"  %} {% endcomment %}
+
+{% block content %}
+<!-- Inner Page Banner Area Start Here -->
+<div class="inner-page-banner-area" style="background-image: url('/static/img/career/career.webp');">
+    <div class="container">
+        <div class="pagination-area">
+            <h1>Career</h1>
+            <ul>
+                <li><a href="/">Home</a> -</li>
+                <li>Career</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Inner Page Banner Area End Here -->
+
+{% comment %} career cards  {% endcomment %}
+<section class="career">
+    <div class="about-page1-area">
+        <div class="container">
+            <div class="row about-page1-inner">
+               {% for n in careerData %}
+                <div class="col-lg-4 col-md-4 col-12">
+                    <div class="job-detail ree-card m-2">
+                        <h4><b>{{n.career_title}}</b></h4>
+                        <div class="job-info w-100 mt30">
+                           <div class="career-detail">
+                              <p>Required Experience</p>
+                              <p>{{n.career_exp}}</p>
+                           </div>
+                           <div class="career-detail">
+                              <p>Number of Position</p>
+                              <p>{{n.career_position}}</p>
+                           </div>
+                           <div class="career-detail">
+                              <p>Job Location</p>
+                              <p>{{n.career_location}}</p>
+                              
+                           </div>
+                           <div class="career-detail">
+                              <p>Job Type</p>
+                              <p> {% if n.career_type == 'FT' %} {{"FullTime"}} {% else %} {{"Part Time"}} {% endif %}  </p>
+                           </div>
+                        </div>
+                        <div class="job-titl mt-5">
+                           <p class="m-0">2 days Ago</p>
+                           <a href="get-quote.html" class="ree-btn  ree-btn-grdt2" data-bs-toggle="modal" data-bs-target="#career-modal">Apply Now <i class="fa fa-arrow-right fa-btn"></i></a>
+                        </div>
+                     </div>
+                </div>
+
+                {% endfor %}
+                
+            </div>
+        </div>
+    </div>
+</section>
+ {% comment %} career cards  {% endcomment %}
+
+
+{% comment %} career form  {% endcomment %}
+
+  <!-- Modal -->
+  <div class="modal fade" id="career-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="career-modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="career-modalLabel">Apply Now</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="career-form">
+            <form action="" method="">
+                <div class="form-group">
+                    <label class="pb-2" for="positions">Positions:</label>
+                    <select name="positions" class="form-control">
+                        <option value="choose positions">--Choose Position--</option>
+                        <option value="primary teacher">Primary teacher</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="pb-2" for="name">Name:</label>
+                    <input type="text" name="name" class="form-control" placeholder="Enter Name" required>
+                </div>
+                <div class="form-group">
+                    <label class="pb-2" for="mobile">Mobile:</label>
+                    <input type="text" name="mobile" maxlength="10" minlength="10" class="form-control" placeholder="Enter Mobile Number" required>
+                </div>
+                <div class="form-group">
+                    <label class="pb-2" for="email">Email:</label>
+                    <input type="email" name="email" class="form-control" placeholder="Enter Email">
+                </div>
+                <div class="form-group">
+                    <label for="formFile" class="form-label">Upload your resume:</label>
+                    <input class="form-control" name="resume" type="file" id="formFile">
+                </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-close" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary c-submit">Submit</button>
+        </div>
+    </form>
+      </div>
+    </div>
+  </div>
+{% comment %} career form  {% endcomment %}
+{% endblock %} 

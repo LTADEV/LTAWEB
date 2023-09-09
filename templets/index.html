@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+        <title>{{title}}</title>
+        
+        <style>
+            .main{
+                width : 1000px;
+                background-color : red;
+                color:white;
+            }
+        </style>
+    </head>
+    <body>
+      
+        <div class="main">
+            <h1>{{header}}</h1>
+        </div>
+        <div>
+            {% for n in courselist %}
+            <h1>{{forloop.counter}} : {{n}}</h1> <h1></h1>
+            {% endfor %}
+        </div>
+        <br/>
+        <table border=1px cellpadding="10">
+            <tr>
+                <th>name</th>
+                <th>number</th>
+            </tr>
+            {% for d in studentdata %}
+            <tr>
+                <td> {{d.name}}</td>
+                <td>{{d.mobile}} </td>
+            </tr>
+            {% endfor %}
+        </table>  
+        <br/>
+        {% if number|length > 0 %}
+            {% for n in number %}
+            {% if n > 20 %}
+            <div>{{n}}</div>
+            {% endif %}
+            
+            {% endfor %}
+        {% else %}
+            <div>No data found</div>
+        {% endif %}
+
+
+        
+        <script src="" async defer></script>
+    </body>
+</html>

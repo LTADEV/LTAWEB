@@ -1,0 +1,99 @@
+{% extends "Frontend/base.html" %}
+{% block content %}
+ <!-- Inner Page Banner Area Start Here -->
+ <div class="inner-page-banner-area" style="background-image: url('/static/img/about/about-banner.webp');">
+    <div class="container">
+        <div class="pagination-area">
+            <h1>Contact Us</h1>
+            <ul>
+                <li><a href="/">Home</a> -</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Inner Page Banner Area End Here -->
+<!-- Contact Us Page 2 Area Start Here -->
+{%if message != '' %}
+   
+    <div style=" width: 1200px; background-color:green; text-align: center; border: 10px solid white; margin: auto; border-radius: 25px;"><p style="color:black; font-family: Arial, Helvetica, sans-serif; font-size:25px;">{{message}}</p></div>
+{% endif %}   
+<div class="contact-us-page2-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                <h2 class="title-default-left title-bar-high">Information</h2>
+                <div class="contact-us-info2">
+                    <ul>
+                        <li><i class="fa fa-map-marker" aria-hidden="true"></i>Learning Tree Academy Sesagan, P.O. Panchagan,
+                            Distt. Cuttack. Odisha Pin : 754030</li>
+                        <li><i class="fa fa-phone" aria-hidden="true"></i>+91 809 3000 761</li>
+                        <li><i class="fa fa-phone" aria-hidden="true"></i>+91 809 3000 762</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                        <h2 class="title-default-left title-bar-high">Contact With Us</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="contact-form2">
+                        <form id="contact-form" method="post" action='' >
+                            {% csrf_token %}
+                           
+                            <fieldset>
+                                <div class="col-md-6">
+                                    {{form}}
+                                  
+                                
+                                {% comment %} <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Name*" class="form-control" name="name" id="form-name" data-error="Name field is required" required>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Phone*" class="form-control" name="phone" id="form-name" data-error="Phone field is required" required>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" placeholder="Email*" class="form-control" name="email" id="form-email" data-error="Email field is required" required>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea placeholder="Message*" class="textarea form-control" name="message" id="form-message" rows="8" cols="20" data-error="Message field is required" required></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div> {% endcomment %}
+                                
+                                        <button type="submit" class=" apply-now-btn">Send Message</button>
+                                   
+                            </div>  
+                                <div class="col-xl-8 col-lg-8 col-md-6 col-md-12">
+                                    <div class='form-response'></div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="google-map-area">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d239326.62493064854!2d85.57533549915715!3d20.404380489943936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a18e34d59734a31%3A0x909af4a4510e7ab8!2sLearning%20Tree%20Academy%2C%20Tigiria!5e0!3m2!1sen!2sin!4v1676860927280!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact Us Page 2 Area End Here -->
+{%endblock%}

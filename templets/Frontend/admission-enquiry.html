@@ -1,0 +1,106 @@
+{%extends "Frontend/base.html"%}
+
+{%block content %}
+<!-- Inner Page Banner Area Start Here -->
+<div class="inner-page-banner-area" style="background-image: url('/static/img/homepage/home_banner.jpg');">
+    <div class="container">
+        <div class="pagination-area">
+            <h1>Admission</h1>
+            <ul>
+                <li><a href="/">Home</a> -</li>
+                <li>Admission</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% if message != 'Thank You , We will getback to you soon' %}
+<section class="admission-form">
+    <div class="about-page1-area">
+        <div class="container">
+            <div class="content-box text-center">
+                <h2>Admission Open For the Academics Year 2023-2024</h2>
+                <h4>Online Enquiry Form</h4>
+            </div>
+            <div class="registration-details-area inner-page-padding pt-5">
+                <form id="checkout-form" action='' method='post'>
+                    {% csrf_token %}
+                    <div class="row">
+                        
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label" for="first-name">First Name *</label>
+                                <input type="text" id="first-name" class="form-control" name="first_name">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label" for="last-name">Last Name *</label>
+                                <input type="text" id="last-name" class="form-control" name="last_name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label" for="email">E-mail Address *</label>
+                                <input type="text" id="email" class="form-control" name="email">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label" for="phone">Phone *</label>
+                                <input type="text" id="phone" class="form-control" name="phone">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label" for="country">Class</label>
+                                <div class="custom-select">
+                                    <select class="form-control" id="country" class="select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true" name="class">
+                                        <option value="0">Select Class</option>
+                                        <option value="1">Standard 1</option>
+                                        <option value="2">Standard 2</option>
+                                        <option value="3">Standard 3</option>
+                                        <option value="4">Standard 4</option>
+                                        <option value="2">Standard 5</option>
+                                        <option value="3">Standard 6</option>
+                                        <option value="4">Standard 7</option>
+                                       
+                                    </select><span class="select2 select2-container select2-container--classic" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-country-container"><span class="select2-selection__rendered" id="select2-country-container" title="Select your country">Select your country</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label" for="town-city">Town / City / Location</label>
+                                <input type="text" id="town-city" class="form-control" name="location">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label">Message</label>
+                                <textarea type="text" id="address-line1" class="form-control" rows="5" name="message"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <div class="pLace-order mt-30">
+                                <button class="view-all-accent-btn default-big-btn" type="submit" value="Login">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% else %}
+<div style=" width: 1200px; background-color:green; text-align: center; border: 10px solid white; margin: auto; border-radius: 25px;"><p style="color:black; font-family: Arial, Helvetica, sans-serif; font-size:25px;">{{message}}</p></div>
+{% endif %}
+{%endblock%}

@@ -1,0 +1,130 @@
+{% extends "Frontend/base.html"%}
+{% block content %}
+<!-- Inner Page Banner Area Start Here -->
+<div class="inner-page-banner-area" style="background-image: url('/static/img/quiz/quiz2.webp');">
+    <div class="container">
+        <div class="pagination-area">
+            <h1>Quiz Competition</h1>
+            <ul>
+                <li><a href="/">Home</a> -</li>
+                <li>Quiz Competition</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Inner Page Banner Area End Here -->
+<section class="quiz">
+    <div class="about-page1-area">
+        <div class="container">
+            <div class="content-box text-center pb-3">
+                <h2>Join our Quiz Competition and win Exciting Prizes.</h2>
+            </div>
+            <div class="row about-page1-inner justify-content-center">
+                <div class="col-lg-8 col-md-8 col-12">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="quiz-sub-banner pb-5">
+                                <img src="/static/img/quiz/quiz-sub.webp" height="150px" class="img-fluid" alt="quiz competition">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz-qtns-wrapper">
+                        <form>
+                            <div class="qtn-wrapper mb-3">
+                                <p class="qtns">Q1. <b>what is your name?</b></p>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="q1">
+                                            <label class="form-check-label" for="option1">
+                                              Option 1
+                                            </label>
+                                          </div>
+                                          <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="q1">
+                                            <label class="form-check-label" for="option2">
+                                              Option 2
+                                            </label>
+                                          </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="q1">
+                                            <label class="form-check-label" for="option3">
+                                              Option 3
+                                            </label>
+                                          </div>
+                                          <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="q1">
+                                            <label class="form-check-label" for="option4">
+                                              Option 4
+                                            </label>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="qtn-wrapper mb-3">
+                                <p class="qtns">Q1. <b>what is your name?</b></p>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="q2">
+                                            <label class="form-check-label" for="option1">
+                                              Option 1
+                                            </label>
+                                          </div>
+                                          <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="q2">
+                                            <label class="form-check-label" for="option2">
+                                              Option 2
+                                            </label>
+                                          </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="q2">
+                                            <label class="form-check-label" for="option3">
+                                              Option 3
+                                            </label>
+                                          </div>
+                                          <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="q2">
+                                            <label class="form-check-label" for="option4">
+                                              Option 4
+                                            </label>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ans-submit-form">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="mb-3">
+                                            <label for="student name" class="form-label">Student's Name:</label>
+                                            <input type="text" class="form-control"  aria-describedby="studentName">
+                                          </div>
+                                          <div class="mb-3">
+                                            <label for="fathersName" class="form-label">Father's Name:</label>
+                                            <input type="text" class="form-control" id="fathersName">
+                                          </div>
+                                          <div class="mb-3">
+                                            <label for="mobileNumber" class="form-label">Mobile Number:</label>
+                                            <input type="text" class="form-control" id="mobileNumber">
+                                          </div>
+                                          <div class="mb-3">
+                                            <label for="address" class="form-label">Message:</label>
+                                            <textarea name="address" id="address" cols="10" rows="3" class="form-control"></textarea>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary apply-now-btn">Submit</button>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
